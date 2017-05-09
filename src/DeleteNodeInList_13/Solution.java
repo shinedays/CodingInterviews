@@ -1,8 +1,7 @@
 package DeleteNodeInList_13;
 
-import List.MyLinkedList;
+import List.MyLinkList;
 import List.Node;
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -11,17 +10,17 @@ import java.util.function.Predicate;
  * Created by bupt on 5/4/17.
  */
 public class Solution {
-     public static void deleteNode(Node deleted){
-         if(MyLinkedList.head == null || deleted == null)
+     public static void deleteNode(MyLinkList list,Node deleted){
+         if(list.head == null || deleted == null)
              return;
          if(deleted.next != null){
              Node temp = deleted.next;
              deleted.data = temp.data;
              deleted.next = temp.next;
-         } else if(MyLinkedList.head.equals(deleted)){
-             MyLinkedList.head = null;
+         } else if(list.head.equals(deleted)){
+             list.head = null;
          } else {
-             Node temp = MyLinkedList.head;
+             Node temp = list.head;
              while(!temp.next.equals(deleted)){
                  temp = temp.next;
              }
@@ -42,16 +41,18 @@ public class Solution {
         Node node5 = new Node(5);
         Node node6 = new Node(6);
 
-        MyLinkedList.addNode(node1);
-        MyLinkedList.addNode(node2);
-        MyLinkedList.addNode(node3);
-        MyLinkedList.addNode(node4);
-        MyLinkedList.addNode(node5);
-        MyLinkedList.addNode(node6);
+        MyLinkList list = new MyLinkList();
 
-        MyLinkedList.print();
-        deleteNode(node6);
-        MyLinkedList.print();
+        list.addNode(node1);
+        list.addNode(node2);
+        list.addNode(node3);
+        list.addNode(node4);
+        list.addNode(node5);
+        list.addNode(node6);
+
+        list.print();
+        deleteNode(list,node6);
+        list.print();
         int a = 6;
         System.out.println(isEden().test(a));
 

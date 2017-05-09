@@ -1,6 +1,6 @@
 package KthNodeFromEnd_15;
 
-import List.MyLinkedList;
+import List.MyLinkList;
 import List.Node;
 
 /**
@@ -27,13 +27,15 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        MyLinkedList.add(1);
-        MyLinkedList.add(2);
-        MyLinkedList.add(3);
-        MyLinkedList.add(4);
-        MyLinkedList.add(5);
-        MyLinkedList.add(6);
+        MyLinkList list = new MyLinkList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
 
-        System.out.println(findKthToEnd(MyLinkedList.head,1).data);
+        System.out.println(findKthToEnd(list.head,1).data);
+
     }
 }
